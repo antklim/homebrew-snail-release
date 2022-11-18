@@ -5,6 +5,12 @@ class SnailRelease < Formula
 
   on_macos do
     on_arm do
+      url "https://github.com/antklim/snail-release/releases/download/v0.12.0/snail-release-darwin-arm64.tar.gz"
+      sha256 "c02e55f13d41067e114eede25441d066da994a5800be770388694d0b82967fc8"
+
+      def install
+        bin.install "snail-release-darwin-arm64" => "snail-release"
+      end
     end
 
     on_intel do
@@ -13,19 +19,18 @@ class SnailRelease < Formula
 
       def install
         bin.install "snail-release-darwin-x86_64" => "snail-release"
-
-        bash_completion.install "completion/bash/snail-release.bash" => "snail-release"
-        zsh_completion.install "completion/zsh/_snail-release" => "_snail-release"
-        fish_completion.install "completion/fish/snail-release.fish"
       end
     end
   end
 
   on_linux do
-    on_arm do
-    end
-
     on_intel do
+      url "https://github.com/antklim/snail-release/releases/download/v0.12.0/snail-release-linux-x86_64.tar.gz"
+      sha256 "bf83109d451b9783bbba2358939a7e13995ad3ab7bbbf6f5ce14499e4c2ebf99"
+
+      def install
+        bin.install "snail-release-linux-x86_64" => "snail-release"
+      end
     end
   end
 
